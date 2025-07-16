@@ -6,6 +6,7 @@ on:
 
 jobs:
   create-swiss:
+  name: hi
     runs-on: ubuntu-latest
     concurrency:
       group: kob-swiss
