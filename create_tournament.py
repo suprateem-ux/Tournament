@@ -31,14 +31,22 @@ def create_one(idx: int, start_time: datetime.datetime) -> None:
         "interval":        15,
         "variant":         "standard",
         "rated":           "true",
-        "description":     LONG_DESC,        # ← pulled from file
+        "description":     LONG_DESC,
     }
 
     r = requests.post(url, headers=headers, data=payload)
     if r.status_code == 200:
-        print(f"✅  Tmt #{idx+1} created:", r.json().get('url'))
+        try:
+            data = r.json()
+            if 'id' in data:
+                print(f"✅  Tmt #{idx+1} created successfully. ID: {data['id']}")
+            else:
+                print(f"⚠️  Tmt #{idx+1} created (200 OK) but no ID in response:", data)
+        except ValueError:
+            print(f"⚠️  Tmt #{idx+1} created (200 OK) but response is not JSON:", r.text)
     else:
-        print(f"❌  Tmt #{idx+1} error", r.status_code, r.text)
+        print(f"❌  Tmt #{idx+1} error. Status code: {r.status_code}")
+        print("Response text:", r.text)
 
 if __name__ == "__main__":
     first_start = datetime.datetime.utcnow() + datetime.timedelta(minutes=5)
