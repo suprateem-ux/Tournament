@@ -2,9 +2,9 @@ import requests, datetime, os, pathlib
 
 # ─────────────── Settings ───────────────
 TOKEN   = os.environ["LICHESS_KEY"].strip('"')
-TEAM    = "testingsboy"
-ROUNDS  = 10
-CLOCK   = 60            # 1 + 0 bullet = 60 s total
+TEAM    = "international-chess-talent"
+ROUNDS  = 7
+CLOCK   = 180          # 1 + 0 bullet = 60 s total
 NUM_TMT = 12
 GAP_HRS = 2
 
@@ -20,7 +20,7 @@ except FileNotFoundError:
     raise SystemExit("❌ description.txt not found!")
 
 def create_one(idx: int, start_time: datetime.datetime) -> None:
-    name = "KoB Daily bulletz swiss"[:30]
+    name = "Grand Swiss Tournament"[:30]
 
     payload = {
         "name":            name,
