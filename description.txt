@@ -1,9 +1,10 @@
-Welcome to the KoB Daily Bulletz Swiss Tournament! 🏆
+Welcome to the Grand Swiss Tournament! 🏆
 
-⚔️ Time Control: 1+0 Bullet  
-🔁 Rounds: 10  
+⚔️ Time Control: 3+0 Bullet  
+🔁 Rounds: 7  
 💥 Format: Swiss  
 💯 Rated: Yes
+players: 0 :(
 
 Created automatically via GitHub Actions 🤖  
-Join our team: https://lichess.org/team/testingsboy
+Join our team: https://lichess.org/team/international-chess-talent
